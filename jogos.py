@@ -22,17 +22,30 @@ class Minigames():
                     print(f"{j} -> {i + 1}")
                 print("-" * 30)
                 opcao = int(input("Digite o número do jogo que deseja jogar: "))
+                print("-" * 30)
                 if opcao == 1:
+                    print(f"Iniciando {self.jogos[0]}")
+                    print("-" * 30)
                     jogos.adivinha_numero()
                 elif opcao == 2:
+                    print(f"Iniciando {self.jogos[1]}")
+                    print("-" * 30)
                     jogos.batalha_naval()
                 elif opcao == 3:
+                    print(f"Iniciando {self.jogos[2]}")
+                    print("-" * 30)
                     jogos.forca()
                 elif opcao == 4:
+                    print(f"Iniciando {self.jogos[3]}")
+                    print("-" * 30)
                     jogos.hanoi_tower()
                 elif opcao == 5:
+                    print(f"Iniciando {self.jogos[4]}")
+                    print("-" * 30)
                     jogos.joquempo()
                 elif opcao == 6:
+                    print(f"Iniciando {self.jogos[5]}")
+                    print("-" * 30)
                     jogos.quiz()
                 else:
                     print("Digite uma opção válida")
