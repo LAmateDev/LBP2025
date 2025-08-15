@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar conta</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+</head>
+<body>
+    <main>
+        <form action="/criar" method="POST">
+            <section>
+                <h1>Criar Conta</h1>
+                <input type="text" placeholder="{{ mensagem if mensagem else 'Digite um nome de usuário'}}" name="usuario">
+                <input type="password" placeholder="Crie uma senha" name="senha">
+                <button type="submit">Criar</button>
+            </section>
+        </form>
+    </main>
+    
+</body>
+</html>

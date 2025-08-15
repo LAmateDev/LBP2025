@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da adivinhação</title>
+    <link rel="stylesheet" href="{{  url_for('static', filename='css/style_jogo_adivinha.css')  }}">
+</head>
+<body>
+    {% extends "index.html" %}
+
+    {% block content %}
+        <section class="main">
+            <h1>Adivinha Número</h1>
+            <p>No jogo da Adivinhar Número o computador escolherá um número entre 1 e 100,
+                tente acertar o número escolhido com a menor quantidade de tentativas!</p>
+
+            <div id="jogo">
+                <form action="" method="POST">
+                    <input type="number" placeholder="Digite um número entre 1 e 100" name="numero">
+                    <h3> {{  mensagem  }}</h3>
+                </form>
+            </div>
+        </section>
+    {% endblock %}
+</body> 
+</html>

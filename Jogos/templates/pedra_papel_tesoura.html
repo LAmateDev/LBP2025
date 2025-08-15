@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pedra, Papel, Tesoura</title>
+</head>
+<body>
+    <h1>Pedra, Papel, Tesoura</h1>
+    <h2>Placar: Você {{ placar[0] }} x {{ placar[1] }} Computador</h2>
+
+    {% if resultado %}
+        <p><strong>{{ resultado }}</strong></p>
+    {% endif %}
+
+    {% if not fim_de_jogo %}
+        <form method="POST">
+            <button type="submit" name="escolha" value="pedra">Pedra</button>
+            <button type="submit" name="escolha" value="papel">Papel</button>
+            <button type="submit" name="escolha" value="tesoura">Tesoura</button>
+        </form>
+    {% else %}
+        <form method="POST">
+            <button type="submit">Novo Jogo</button>
+        </form>
+    {% endif %}
+
+    <br>
+    <a href="{{ url_for('home') }}">
+        <button type="button">Voltar para a página inicial</button>
+    </a>
+</body>
+</html>

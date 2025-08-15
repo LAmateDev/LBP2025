@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Torre de Hanoi</title>
+</head>
+<body>
+    <h1>Torre de Hanoi</h1>
+
+    {% for i in range(3) %}
+        <h3>Torre {{ i + 1 }}: 
+            {% for disco in torres[i] %}
+                {{ disco }} 
+            {% endfor %}
+        </h3>
+    {% endfor %}
+
+    <p><strong>{{ mensagem }}</strong></p>
+
+    {% if not vitoria %}
+        <form method="POST">
+            <label for="origem">Mover da torre:</label>
+            <select name="origem" required>
+                <option value="" disabled selected>Escolha</option>
+                <option value="1">Torre 1</option>
+                <option value="2">Torre 2</option>
+                <option value="3">Torre 3</option>
+            </select>
+
+            <label for="destino">para a torre:</label>
+            <select name="destino" required>
+                <option value="" disabled selected>Escolha</option>
+                <option value="1">Torre 1</option>
+                <option value="2">Torre 2</option>
+                <option value="3">Torre 3</option>
+            </select>
+
+            <button type="submit">Mover</button>
+        </form>
+    {% endif %}
+
+    <form method="POST">
+        <input type="hidden" name="acao" value="novo_jogo">
+        <button type="submit">Novo Jogo</button>
+    </form>
+
+    <a href="{{ url_for('home') }}">
+        <button type="button">Voltar para a página inicial</button>
+    </a>
+</body>
+</html>

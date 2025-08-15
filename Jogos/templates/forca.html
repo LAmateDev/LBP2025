@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Forca</title>
+</head>
+<body>
+    <h2>Jogo da Forca</h2>
+    <p>{{ mensagem }}</p>
+
+    <p>Palavra: {{ palavra_escondida | join(' ') }}</p>
+    <p>Vidas restantes: {{ vidas }}</p>
+    <p>Letras corretas: {{ letras_corretas | join(', ') }}</p>
+    <p>Letras erradas: {{ letras_erradas | join(', ') }}</p>
+
+    {% if not fim %}
+    <form method="POST">
+        <label>Digite uma letra:
+            <input type="text" name="letra" maxlength="1" required>
+        </label>
+        <button type="submit">Enviar</button>
+    </form>
+    {% else %}
+    <a href="{{ url_for('novo_jogo_forca') }}"><button>Novo Jogo</button></a>
+    {% endif %}
+
+    <br><br>
+    <a href="{{ url_for('home') }}"><button>Voltar ao menu</button></a>
+</body>
+</html>

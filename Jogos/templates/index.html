@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Games</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+
+<body>
+
+    <main>
+        <header>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('games') }}">Games</a></li>
+                <li><a href="{{ url_for('login') }}">About</a></li>
+                {% if "logado" in session %}
+                    <li><a href="{{ url_for('sair')}}">Logout</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                {% endif %}
+
+                <input type="text" placeholder="Pesquisar...">
+            </ul>
+        </nav>      
+
+        {% block content %}
+            <div class="texto">
+                <p>🎮 Introdução Classic Games:</p>
+                <p>Bem-vindo ao Classic Games!</p>
+                <p>
+                    Prepare-se para reviver a diversão com os jogos mais clássicos e atemporais. Aqui, você encontrará
+                    versões digitais de jogos que marcaram gerações — desde desafios de lógica como a Torre de Hanói,
+                    passando por estratégias como a Batalha Naval, até os favoritos como Jogo da Forca e Quiz Interativo.
+                </p>
+                <p>
+                    Seja para testar sua memória, lógica ou apenas se divertir com os amigos, o Classic Games é o lugar
+                    ideal para explorar e jogar gratuitamente.
+                </p>
+                <p>Sinta-se em casa. Escolha seu jogo e comece a jogar!</p>
+            </div>
+
+            <div class="slider">
+                <div class="slides">
+                    <input type="radio" name="radio-btn" id="radio1" checked>
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
+                    <input type="radio" name="radio-btn" id="radio5">
+                    <input type="radio" name="radio-btn" id="radio6">
+
+                    <div class="slide first">
+                        <a href="{{ url_for('torre_de_hanoi') }}">
+                            <img src="{{ url_for('static', filename='assets/torre hanoi.png') }}" alt="Imagem1"
+                                style="height: 400px;">
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <a href="{{ url_for('batalha') }}">
+                            <img src="{{ url_for('static', filename='assets/batalha naval.jpg') }}" alt="Imagem2">
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <a href="{{ url_for('pedra_papel_tesoura') }}">
+                            <img src="{{ url_for('static', filename='assets/joquempo.jpg') }}" alt="Imagem3">
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <a href="{{ url_for('adivinhacao') }}">
+                            <img src="{{ url_for('static', filename='assets/adivinha.jpg') }}" alt="Imagem4">
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <a href="{{ url_for('quiz') }}">
+                            <img src="{{ url_for('static', filename='assets/quiz.jpg') }}" alt="Imagem5">
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <a href="{{ url_for('forca') }}">
+                            <img src="{{ url_for('static', filename='assets/forca.png') }}" alt="Imagem6">
+                        </a>
+                    </div>
+
+                    <div class="navigation-auto">
+                        <div class="auto-btn1"></div>
+                        <div class="auto-btn2"></div>
+                        <div class="auto-btn3"></div>
+                        <div class="auto-btn4"></div>
+                        <div class="auto-btn5"></div>
+                        <div class="auto-btn6"></div>
+                    </div>
+                </div>
+                <div class="manual-navigation">
+                    <label for="radio1" class="manual-btn" onclick="atualizarCont(1)"></label>
+                    <label for="radio2" class="manual-btn" onclick="atualizarCont(2)"></label>
+                    <label for="radio3" class="manual-btn" onclick="atualizarCont(3)"></label>
+                    <label for="radio4" class="manual-btn" onclick="atualizarCont(4)"></label>
+                    <label for="radio5" class="manual-btn" onclick="atualizarCont(5)"></label>
+                    <label for="radio6" class="manual-btn" onclick="atualizarCont(6)"></label>
+                </div>
+            </div>
+        {% endblock %}
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

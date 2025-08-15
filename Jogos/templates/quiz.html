@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz de Programação</title>
+</head>
+<body>
+    <h1>Quiz de Programação</h1>
+    
+    {% if not resultado %}
+        <form method="POST">
+            {% for i in range(questoes|length) %}
+                <fieldset>
+                    <legend>{{ questoes[i].pergunta }}</legend>
+                    {% for letra, alternativa in questoes[i].alternativas.items() %}
+                        <label>
+                            <input type="radio" name="q{{ i + 1 }}" value="{{ letra }}" required>
+                            {{ letra }} {{ alternativa }}
+                        </label><br>
+                    {% endfor %}
+                </fieldset><br>
+            {% endfor %}
+            <button type="submit">Enviar Respostas</button>
+        </form>
+        <a href="{{url_for('home')}}">
+            <button>Voltar para a página inicial</button>
+        </a>
+    {% else %}
+        <h2>Você acertou {{ pontos }} de {{ questoes|length }} questões!</h2>
+        <form method="GET" action="{{ url_for('quiz') }}">
+            <button type="submit">Novo Jogo</button>
+        </form>
+        <form method="get" action="{{url_for('home')}}">
+                <button>Voltar para a página inicial</button>
+        </form>
+    {% endif %}
+</body>
+</html>

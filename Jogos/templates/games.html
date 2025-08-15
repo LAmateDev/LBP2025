@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/games.css') }}">
+</head>
+<body>
+    {% extends "index.html" %}
+
+    {% block content %}
+        <div class="galeria">
+            <div>
+                <h1>Torre de Hanoi</h1>
+                <img src="{{ url_for('static', filename='assets/torre hanoi.png') }}" alt="Imagem1">
+                <form action="{{ url_for('torre_de_hanoi') }}" method="get">
+                    <button action="">Jogar</button>
+                </form>
+            </div>
+            <div>
+                <h1>Batalha Naval</h1>
+                <img src="{{ url_for('static', filename='assets/batalha naval.jpg') }}" alt="Imagem2">
+                <form action="{{ url_for('batalha') }}" method="get">
+                    <button action="">Jogar</button>
+                </form>
+            </div>
+            <div>
+                <h1>Joquempô</h1>
+                <img src="{{ url_for('static', filename='assets/joquempo.jpg') }}" alt="Imagem3">
+                <form action="{{ url_for('pedra_papel_tesoura') }}" method="get">
+                    <button action="">Jogar</button>
+                </form>
+            </div>
+            <div>
+                <h1>Adivinha Número</h1>
+                <img src="{{ url_for('static', filename='assets/adivinha.jpg') }}" alt="Imagem4">
+                <form action="{{ url_for('adivinhacao') }}" method="get">
+                    <button action="">Jogar</button>
+                </form>
+            </div>
+            <div>
+                <h1>Quiz de Programação</h1>
+                <img src="{{ url_for('static', filename='assets/quiz.jpg') }}" alt="Imagem5">
+                <form action="{{ url_for('quiz') }}" method="get">
+                    <button action="">Jogar</button>
+                </form>
+            </div>
+            <div>
+                <h1>Jogo da Forca</h1>
+                <img src="{{ url_for('static', filename='assets/forca.png') }}" alt="Imagem6">
+                <form action="{{ url_for('pedra_papel_tesoura') }}" method="get">
+                    <button action="">Jogar</button>
+                </form>
+            </div>
+        </div>
+    {% endblock %}
+</body>
+</html>
