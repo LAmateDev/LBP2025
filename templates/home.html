@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsPortal - Sua Fonte de Notícias</title>
+    <link rel="stylesheet" href=" {{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+    <main>
+        <!-- Header Principal com Logo -->
+        <header class="main-header">
+            <div class="container">
+                <div class="logo">NewsPortal</div>
+                <div class="tagline">Sua fonte confiável de notícias</div>
+            </div>
+        </header>
+
+        <!-- Navegação -->
+        <nav class="main-nav">
+            <div class="container nav-container">
+                <ul class="nav-links">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('news') }}">Notícias</a></li>
+                    <li><a href="{{ url_for('articles')}}">Articles</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <!-- Destaques Principais -->
+            <section class="featured-news">
+                <article class="featured-item">
+                    <div class="featured-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/492ca03a-1894-437a-9d15-1f8d3a8349c2.png" alt="Cientistas em laboratório moderno analisando dados em painéis digitais com gráficos complexos sobre avanços em inteligência artificial" />
+                    </div>
+                    <div class="featured-content">
+                        <span class="category">Tecnologia</span>
+                        <h2 class="featured-title">Revolução da IA: Novos Algoritmos Transformam a Pesquisa Científica</h2>
+                        <p class="featured-excerpt">Pesquisadores desenvolvem sistema de inteligência artificial capaz de acelerar descobertas científicas em 400%, revolucionando metodologias tradicionais...</p>
+                        <a href="#" class="read-more">Ler mais →</a>
+                    </div>
+                </article>
+
+                <article class="featured-item">
+                    <div class="featured-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2128c981-cf7f-4fb7-8ff6-0b49917c4b1e.png" alt="Panorama urbano sustentável com prédios modernos, parques verdes e painéis solares refletindo a luz do sol em uma cidade futurística" />
+                    </div>
+                    <div class="featured-content">
+                        <span class="category">Sustentabilidade</span>
+                        <h2 class="featured-title">Cidades Inteligentes: O Futuro do Desenvolvimento Urbano Sustentável</h2>
+                        <p class="featured-excerpt">Novas tecnologias e planejamento urbano inovador estão transformando metrópoles em ecossistemas sustentáveis e eficientes...</p>
+                        <a href="#" class="read-more">Ler mais →</a>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Notícias Secundárias -->
+            <section class="secondary-news">
+                <article class="news-item">
+                    <div class="news-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1f209815-adfd-4126-b8d9-2a5e209a6986.png" alt="Mercado financeiro global com traders analisando dados em múltiplos monitores mostrando gráficos de bolsas de valores internacionais" />
+                    </div>
+                    <div class="news-content">
+                        <div class="news-category">Economia</div>
+                        <h3 class="news-title">Mercado Global: Tendências e Previsões para o Próximo Trimestre</h3>
+                        <div class="news-meta">
+                            <span>Por Ana Silva</span>
+                            <span>2 horas atrás</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-item">
+                    <div class="news-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0e5fca5a-3728-4ce4-9cd2-00dbd27b1c32.png" alt="Atleta profissional em competição de alto nível demonstrando técnica perfeita em ambiente esportivo moderno com torcida animada" />
+                    </div>
+                    <div class="news-content">
+                        <div class="news-category">Esportes</div>
+                        <h3 class="news-title">Jogos Olímpicos: Novos Recordes e Performances Históricas</h3>
+                        <div class="news-meta">
+                            <span>Por Carlos Oliveira</span>
+                            <span>5 horas atrás</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-item">
+                    <div class="news-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4c05e9c0-f94b-4beb-9062-9fef7cde9f5a.png" alt="Show ao vivo em palco iluminado com multidão vibrante e performance artística em grande festival de música internacional" />
+                    </div>
+                    <div class="news-content">
+                        <div class="news-category">Cultura</div>
+                        <h3 class="news-title">Cena Cultural: Festival Anual Atrai Artistas Mundiais</h3>
+                        <div class="news-meta">
+                            <span>Por Maria Santos</span>
+                            <span>8 horas atrás</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-item">
+                    <div class="news-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3eadaa84-778b-45fb-95ec-3a97144a7db0.png" alt="Equipe médica em hospital moderno utilizando tecnologia avançada de diagnóstico por imagem em procedimento médico inovador" />
+                    </div>
+                    <div class="news-content">
+                        <div class="news-category">Saúde</div>
+                        <h3 class="news-title">Avancos Médicos: Nova Tecnologia Revoluciona Diagnósticos</h3>
+                        <div class="news-meta">
+                            <span>Por Dr. João Silva</span>
+                            <span>12 horas atrás</span>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Newsletter -->
+            <section class="newsletter">
+                <h2>Fique por Dentro</h2>
+                <p>Receba as principais notícias diretamente no seu email</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Seu melhor email" required>
+                    <button type="submit" class="newsletter-button">Assinar</button>
+                </form>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>Sobre Nós</h3>
+                        <p>NewsPortal traz as notícias mais relevantes com credibilidade e agilidade, sempre priorizando a qualidade da informação.</p>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Links Rápidos</h3>
+                        <ul class="footer-links">
+                            <li><a href="{{ url_for('home') }}">Home</a></li>
+                            <li><a href="{{ url_for('news') }}">Notícias</a></li>
+                            <li><a href="{{ url_for('articles')}}">Artigos</a></li>
+                            <li><a href="#">Política de Privacidade</a></li>
+                            <li><a href="#">Termos de Uso</a></li>
+                        </ul>
+                    </div>
+                                    
+                    <div class="footer-section">
+                        <h3>Contato</h3>
+                        <p>Email: contato@newsportal.com</p>
+                        <p>Telefone: (11) 9999-9999</p>
+                        <div class="social-links">
+                            <a href="#">Facebook</a>
+                            <a href="#">Twitter</a>
+                            <a href="#">Instagram</a>
+                            <a href="#">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="copyright">
+                    <p>© 2024 NewsPortal. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+</body>
+</html>
+
